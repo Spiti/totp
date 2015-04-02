@@ -11,6 +11,30 @@ TOTP is based on HOTP with a timestamp replacing the incrementing counter.
 
 It has been adopted as Internet Engineering Task Force standard RFC 6238.(RFC 4226 for HOTP)
 
-For more information please vizit:
+For more information please visit:
 Wikipedia: http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm
 RFC: http://tools.ietf.org/html/rfc6238
+
+## Requirements
+
+* Microsoft .NET Framework 4.0
+
+## Usage
+
+// Cal TOTP service
+     
+string password = _totp.GeneratePassword(123, DateTime.Now);
+
+## Source Code
+
+Source code can be find on GITHUB:
+
+https://github.com/Spiti/totp
+
+## About
+
+Implemented in Visual Studio 2013, using C#. Project includes unit tests, and can be manualy tested using the existing console application.
+
+
+
+
