@@ -33,8 +33,10 @@ https://github.com/Spiti/totp
 
 ## About
 
-Implemented in Visual Studio 2013, using C#. Project includes unit tests, and can be manualy tested using the existing console application.
-
+.NET Library using C# programming language. It implements a clear form of TOTP algorithm.
+It includes a console application in oder to do a quick password generation using TOTP algorithm.
+The project is formed by small, clear and concise steps. The code is unit tested and helps you understand
+the TOTP algorithm strategy.
 
 
 
