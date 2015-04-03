@@ -21,9 +21,26 @@ RFC: http://tools.ietf.org/html/rfc6238
 
 ## Usage
 
-// Cal TOTP service
-     
-string password = _totp.GeneratePassword(123, DateTime.Now);
+// TOTP algorithm uses HOTP
+        
+        public string GenerateOtp(byte[] key, DateTime time)
+        {
+            if (time < UnixTime.UnixEpochDate)
+                throw new ArgumentOutOfRangeException("time", "Time cannot be less than unix epoch");
+
+            var stepsSinceUnixEpoch = (long)(UnixTime.GetUnixTicks(time) / DefaultTimeStep);
+
+            return _hotp.GenerateOtp(key, stepsSinceUnixEpoch);
+        }
+
+// Call TOTP service
+
+string otp = _totp.GenerateOtp(keyBytes, dateTime);
+
+// Call generate password service
+
+var password GeneratePassword(userId, dateTime)
+
 
 ## Source Code
 
